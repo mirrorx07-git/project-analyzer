@@ -6,3 +6,4 @@ Pillow==11.0.0
 pytesseract==0.3.10
 Werkzeug==3.0.1
 gunicorn==21.2.0
+httpx==0.27.2
