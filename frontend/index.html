@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProjectLens | Project Analyzer</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <i class="fas fa-compass"></i>
+          <span>ProjectLens</span>
+        </div>
+        <div class="nav-links">
+          <a href="#upload-section" class="nav-link">Analyze</a>
+          <a href="#features" class="nav-link">How it works</a>
+          <a href="https://github.com" target="_blank" class="nav-link">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-chart-line"></i> Project analysis workspace</div>
+        <h1 class="hero-title">
+          Understand your project
+          <span class="gradient-text">at a glance.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Share a repository, source files, or a code screenshot to review the
+          technologies, skills, and practical next steps in your project.
+        </p>
+        <div class="hero-actions">
+          <a href="#upload-section" class="btn btn-primary btn-lg">
+            <i class="fas fa-arrow-right"></i> Analyze a project
+          </a>
+          <a href="#features" class="btn btn-outline btn-lg">
+            <i class="fas fa-info-circle"></i> How it works
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Languages Supported</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Technologies Detected</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">Clear</div>
+            <div class="stat-label">Project insights</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <h3>GitHub Repository</h3>
+            <p>
+              Paste your repository URL and we'll analyze the entire codebase,
+              dependencies, and project structure.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-file-code"></i>
+            </div>
+            <h3>Code Files</h3>
+            <p>
+              Upload individual code files directly. Supports 50+ programming
+              languages and config formats.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-camera"></i>
+            </div>
+            <h3>Screenshots</h3>
+            <p>
+              Upload a code screenshot to identify technologies and receive
+              structured feedback.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-road"></i>
+            </div>
+            <h3>Learning Path</h3>
+            <p>
+              Get personalized recommendations for technologies to learn next
+              based on your current skill level.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload-section" class="upload-section">
+      <div class="container">
+        <h2 class="section-title">Upload Your Project</h2>
+        <p class="section-subtitle">
+          Choose how you want to share your project for analysis
+        </p>
+
+        <!-- Tab Navigation -->
+        <div class="tab-nav">
+          <button class="tab-btn active" data-tab="github">
+            <i class="fab fa-github"></i>
+            <span>GitHub Repo</span>
+          </button>
+          <button class="tab-btn" data-tab="file">
+            <i class="fas fa-file-code"></i>
+            <span>Code Files</span>
+          </button>
+          <button class="tab-btn" data-tab="screenshot">
+            <i class="fas fa-camera"></i>
+            <span>Screenshot</span>
+          </button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-contents">
+          <!-- GitHub Tab -->
+          <div class="tab-content active" id="tab-github">
+            <div class="upload-card">
+              <div class="upload-card-header">
+                <i class="fab fa-github"></i>
+                <h3>Analyze GitHub Repository</h3>
+              </div>
+              <p>
+                Enter your public GitHub repository URL to analyze the entire
+                project.
+              </p>
+              <div class="input-group">
+                <div class="input-icon">
+                  <i class="fas fa-link"></i>
+                </div>
+                <input
+                  type="text"
+                  id="github-url"
+                  placeholder="https://github.com/username/repository"
+                  class="input-field"
+                />
+              </div>
+              <div class="input-hint">
+                <i class="fas fa-info-circle"></i>
+                Supports public repositories. Example:
+                https://github.com/facebook/react
+              </div>
+              <button id="analyze-github-btn" class="btn btn-primary btn-block">
+                <i class="fas fa-search"></i> Analyze Repository
+              </button>
+            </div>
+          </div>
+
+          <!-- File Upload Tab -->
+          <div class="tab-content" id="tab-file">
+            <div class="upload-card">
+              <div class="upload-card-header">
+                <i class="fas fa-file-code"></i>
+                <h3>Upload Code Files</h3>
+              </div>
+              <p>
+                Upload one or more code files for analysis. Supports all major
+                programming languages.
+              </p>
+              <div class="drop-zone" id="file-drop-zone">
+                <div class="drop-zone-content">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <h4>Drag & Drop Files Here</h4>
+                  <p>or click to browse</p>
+                  <span class="supported-formats">
+                    .py .js .ts .html .css .java .cpp .c .go .rs .php .rb .json
+                    .yml
+                  </span>
+                </div>
+                <input
+                  type="file"
+                  id="file-input"
+                  multiple
+                  accept=".py,.js,.ts,.jsx,.tsx,.html,.css,.java,.cpp,.c,.cs,.rb,.php,.go,.rs,.swift,.kt,.json,.xml,.yaml,.yml,.toml,.sql,.vue,.svelte,.scss,.sass,.md,.txt,.dockerfile,.sh"
+                  hidden
+                />
+              </div>
+              <div id="file-list" class="file-list"></div>
+              <button
+                id="analyze-files-btn"
+                class="btn btn-primary btn-block"
+                disabled
+              >
+                <i class="fas fa-search"></i> Analyze Files
+              </button>
+            </div>
+          </div>
+
+          <!-- Screenshot Tab -->
+          <div class="tab-content" id="tab-screenshot">
+            <div class="upload-card">
+              <div class="upload-card-header">
+                <i class="fas fa-camera"></i>
+                <h3>Upload Code Screenshot</h3>
+              </div>
+              <p>
+                Upload a screenshot of your code for analysis.
+              </p>
+              <div class="drop-zone" id="screenshot-drop-zone">
+                <div class="drop-zone-content">
+                  <i class="fas fa-image"></i>
+                  <h4>Drag & Drop Screenshot Here</h4>
+                  <p>or click to browse</p>
+                  <span class="supported-formats">
+                    .png .jpg .jpeg .gif .bmp .webp
+                  </span>
+                </div>
+                <input
+                  type="file"
+                  id="screenshot-input"
+                  accept="image/png,image/jpeg,image/gif,image/bmp,image/webp"
+                  hidden
+                />
+              </div>
+              <div id="screenshot-preview" class="screenshot-preview"></div>
+              <button
+                id="analyze-screenshot-btn"
+                class="btn btn-primary btn-block"
+                disabled
+              >
+                <i class="fas fa-search"></i> Analyze Screenshot
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+      <div class="loading-content">
+        <div class="loading-spinner">
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+          <i class="fas fa-robot spinner-icon"></i>
+        </div>
+        <h3 class="loading-title">Analyzing your project</h3>
+        <p class="loading-text" id="loading-status">Scanning your project</p>
+        <div class="loading-progress">
+          <div class="loading-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Section -->
+    <section id="results-section" class="results-section hidden">
+      <div class="container">
+        <div class="results-header">
+          <h2 class="section-title">
+            <i class="fas fa-chart-bar"></i> Analysis Results
+          </h2>
+          <button id="new-analysis-btn" class="btn btn-outline">
+            <i class="fas fa-redo"></i> New Analysis
+          </button>
+        </div>
+
+        <!-- Project Summary -->
+        <div id="project-summary" class="result-card summary-card">
+          <!-- Filled dynamically -->
+        </div>
+
+        <!-- Results Grid -->
+        <div class="results-grid">
+          <!-- Technologies Used -->
+          <div class="result-card" id="tech-used-card">
+            <div class="card-header">
+              <h3><i class="fas fa-layer-group"></i> Technologies Used</h3>
+            </div>
+            <div id="tech-used-content" class="card-content">
+              <!-- Filled dynamically -->
+            </div>
+          </div>
+
+          <!-- Skills Learned -->
+          <div class="result-card" id="skills-card">
+            <div class="card-header">
+              <h3><i class="fas fa-graduation-cap"></i> Skills Learned</h3>
+            </div>
+            <div id="skills-content" class="card-content">
+              <!-- Filled dynamically -->
+            </div>
+          </div>
+
+          <!-- Related Technologies -->
+          <div class="result-card full-width" id="related-tech-card">
+            <div class="card-header">
+              <h3>
+                <i class="fas fa-project-diagram"></i> Related Technologies to
+                Explore
+              </h3>
+            </div>
+            <div id="related-tech-content" class="card-content">
+              <!-- Filled dynamically -->
+            </div>
+          </div>
+
+          <!-- Upgrade Suggestions -->
+          <div class="result-card full-width" id="upgrade-card">
+            <div class="card-header">
+              <h3><i class="fas fa-arrow-up"></i> Upgrade Suggestions</h3>
+            </div>
+            <div id="upgrade-content" class="card-content">
+              <!-- Filled dynamically -->
+            </div>
+          </div>
+
+          <!-- Learning Path -->
+          <div class="result-card full-width" id="learning-path-card">
+            <div class="card-header">
+              <h3><i class="fas fa-road"></i> Your Learning Path</h3>
+            </div>
+            <div id="learning-path-content" class="card-content">
+              <!-- Filled dynamically -->
+            </div>
+          </div>
+
+          <!-- Code Quality Tips -->
+          <div class="result-card full-width" id="code-tips-card">
+            <div class="card-header">
+              <h3><i class="fas fa-lightbulb"></i> Code Quality Tips</h3>
+            </div>
+            <div id="code-tips-content" class="card-content">
+              <!-- Filled dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Error Toast -->
+    <div id="error-toast" class="toast hidden">
+      <div class="toast-content">
+        <i class="fas fa-exclamation-circle"></i>
+        <span id="error-message"></span>
+      </div>
+      <button class="toast-close" onclick="hideError()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+          <i class="fas fa-compass"></i>
+            <span>ProjectLens</span>
+          </div>
+          <p>
+            A focused workspace for reviewing project structure and technology
+            choices.
+          </p>
+          <div class="footer-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
